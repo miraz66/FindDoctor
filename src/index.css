@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.radial-gradient {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 63%,
+    rgba(228, 225, 225, 1) 100%
+  );
+}
+
+/* $blu: #69a4fc; */
+
+details {
+  user-select: none;
+  & summary svg {
+    transform: rotate(90deg);
+  }
+}
+details[open] {
+  & summary svg {
+    transform: rotate(-90deg);
+  }
+}
+
+details[open] summary ~ * {
+  animation: ease-opacity-t-b 0.5s ease;
+}
+
+summary {
+  cursor: pointer;
+}
+svg {
+  transition: all 0.3s;
+}
+
+/* TO JE TO - TO JE TAJ */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+:focus {
+  outline: none;
+}
+.show-more {
+  display: flex;
+  padding-top: 40px;
+}
